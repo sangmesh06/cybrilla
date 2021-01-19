@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "50a80800-19bd-4dad-937a-49186eaafb0e",
+		"name": "Bank management ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addAccount",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"customerName\":\"deepan\",\r\n   \"mobileNo\":\"7708203737\",\r\n   \"address\":\"sankrapuram\",\r\n   \"emailId\":\"deepan@gmail.com\",\r\n   \"zipcode\":\"605802\",\r\n   \"panNumber\":\"GMZPD9978K\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/employee/addAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"employee",
+						"addAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAccount",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/employee/getAccount?accNo=783713659",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"employee",
+						"getAccount"
+					],
+					"query": [
+						{
+							"key": "accNo",
+							"value": "783713659"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAccount",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/employee/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"employee",
+						"getAll"
+					],
+					"query": [
+						{
+							"key": "accNo",
+							"value": "783713659",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n {\"id\": \"60068053ea68580427a079d0\",\r\n            \"customerName\": \"anandh\",\r\n            \"accountNo\": 132055893,\r\n            \"mobileNo\": \"7708203737\",\r\n            \"address\": \"sankrapuram\",\r\n            \"emailId\": \"deepan@gmail.com\",\r\n            \"status\": 0,\r\n            \"deleteFlag\": 0,\r\n            \"zipcode\": \"605802\",\r\n            \"panNumber\": \"GMZPD9978K\",\r\n            \"ifscCode\": \"MK3ty7Ke\"\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/employee/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"employee",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction(debit)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n {\r\n \t\"type\":1,\r\n \t\"accountNo\":132055893,\r\n \t\"credit\":{\r\n \t\t\"accountNum\":157275988,\r\n \t\t\"amount\":20000,\r\n \t\t\"accountType\":1,\r\n \t\t\"fromAccountNo\":132055893,\r\n \t\t\"note\":\"hai\",\r\n \t\t\"fromIfscCode\":\"v6ULd69z\"\r\n \t}\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction(credit)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n {\r\n \t\"type\":1,\r\n \t\"accountNo\":132055893,\r\n \t\"credit\":{\r\n \t\t\"accountNum\":157275988,\r\n \t\t\"amount\":2000,\r\n \t\t\"accountType\":1,\r\n \t\t\"fromAccountNo\":132055893,\r\n \t\t\"note\":\"hai\",\r\n \t\t\"fromIfscCode\":\"v6ULd69z\"\r\n \t}\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "balance",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/balance?id=132055893",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "132055893"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTransaction",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/getAll?id=132055893",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"getAll"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "132055893"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/getById?id=6006874f95a2f26e82f9a355",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6006874f95a2f26e82f9a355"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
